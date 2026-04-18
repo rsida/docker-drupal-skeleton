@@ -121,7 +121,7 @@ _drupal-install:
 			-e COMPOSER_ALLOW_SUPERUSER=1 \
 			composer:2 composer require drush/drush --ignore-platform-reqs; \
 	fi
-	docker compose exec php sh -c "mkdir -p web/sites/default/files/translations && chmod -R 777 web/sites/default/files"
+	docker compose exec php sh -c "chmod 777 web/sites/default && cp web/sites/default/default.settings.php web/sites/default/settings.php && chmod 666 web/sites/default/settings.php && mkdir -p web/sites/default/files/translations && chmod -R 777 web/sites/default/files"
 	$(DRUSH) site:install standard \
 		--db-url=mysql://$(DB_USER):$(DB_PASSWORD)@mariadb:3306/$(DB_NAME) \
 		--site-name="$(APP_NAME)" \
