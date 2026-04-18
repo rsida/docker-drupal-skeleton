@@ -4,7 +4,7 @@ export
 
 DOCKER_EXEC = docker compose exec php
 COMPOSER    = $(DOCKER_EXEC) composer
-DRUSH       = $(DOCKER_EXEC) php vendor/bin/drush
+DRUSH       = $(DOCKER_EXEC) sh vendor/bin/drush
 
 ##@ Setup
 
