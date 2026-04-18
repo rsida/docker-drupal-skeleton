@@ -1,0 +1,10 @@
+.env
+vendor/
+web/core/
+web/modules/contrib/
+web/themes/contrib/
+web/profiles/contrib/
+web/sites/default/settings.php
+web/sites/default/files/
+drush/contrib/
+*.log
